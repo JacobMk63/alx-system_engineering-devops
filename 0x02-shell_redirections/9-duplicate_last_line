@@ -1,2 +1,2 @@
 #!/bin/bash
-sort iacta | uniq -c 
+awk '/section/ { section = $2 } !x[section,$0]++' "$iacta"  
