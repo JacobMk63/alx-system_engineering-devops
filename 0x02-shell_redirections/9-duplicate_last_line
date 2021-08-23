@@ -1,2 +1,2 @@
 #!/bin/bash
-awk '/section/ { section = $2 } !x[section,$0]++' "$iacta"  
+sed "h;s/^/>/;p;x" iacta   
