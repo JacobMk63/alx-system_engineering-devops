@@ -1,2 +1,2 @@
 #!/bin/bash
-sed "h;s/^/>/;p;x" iacta   
+tail --lines=1 iacta >> ictacta    
