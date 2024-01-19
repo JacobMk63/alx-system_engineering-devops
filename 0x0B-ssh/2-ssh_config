@@ -15,6 +15,7 @@ Host *
 #   AddressFamily any
 #   ConnectTimeout 0
 #   StrictHostKeyChecking ask
+#   ~/.ssh/authorized_keys
     IdentityFile ~/.ssh/school
 #   IdentityFile ~/.ssh/id_rsa
 #   IdentityFile ~/.ssh/id_dsa

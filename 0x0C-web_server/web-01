@@ -1,6 +1,6 @@
-i#!/usr/bin/env bash
+#!/usr/bin/env bash
 # login server-01 login
 
-eval $("ssh-agent")
-ssh-ad ~/.ssh
+eval "$(ssh-agent -s)"
+ssh-add ssh-add ~/.ssh/id_rsa
 ssh ubuntu@100.26.233.251
