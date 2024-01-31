@@ -1,9 +1,13 @@
-# Increases the number of requests that nginx can handle.
-# by increasing maximum open files limit for the nginx user.
+# Increases the amount of traffic an Nginx server can handle.
 
-exec { 'set_ulimit_to 5000':
-  command => '/bin/sed -i "s/ULIMIT.*/ULIMIT=\"-n 5000\"/" /etc/default/nginx'
+# Increase the ULIMIT of the default file
+exec { 'fix--for-nginx':
+  command => 'sed -i "s/15/4096/" /etc/default/nginx',
+  path    => '/usr/local/bin/:/bin/'
+} ->
 
-} -> exec { 'restart nginx':
-  command => '/usr/sbin/service nginx restart',
+# Restart Nginx
+exec { 'nginx-restart':
+  command => 'nginx restart',
+  path    => '/etc/init.d/'
 }
